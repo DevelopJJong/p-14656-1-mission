@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PostService {
@@ -18,5 +20,9 @@ public class PostService {
     public Post create(String title, String content, String author) {
         Post post = new Post(title, content, author);
         return postRepository.save(post);
+    }
+
+    public List<Post> findAll() {
+        return postRepository.findAll();
     }
 }
