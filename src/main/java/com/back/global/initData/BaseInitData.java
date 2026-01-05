@@ -45,9 +45,7 @@ public class BaseInitData {
     private void work3(){
         log.debug("Post 단건 조회");
         for (Post post : postService.findAll()) {
-//            log.debug("조회된 PostId : {}", post.getId());
-//            log.debug("조회된 Post: {}", postService.findById(post.getId()));
-            log.debug("조회된 포스트: {}", post);
+            log.debug("조회된 Post: {}", postService.findById(post.getId()));
         }
     }
 }
